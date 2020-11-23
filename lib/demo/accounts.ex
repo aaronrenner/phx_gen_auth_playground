@@ -89,7 +89,7 @@ defmodule Demo.Accounts do
 
   """
   def change_user_registration(%User{} = user, attrs \\ %{}) do
-    User.registration_changeset(user, attrs)
+    User.registration_changeset(user, attrs, hash_password: false)
   end
 
   ## Settings
@@ -180,7 +180,7 @@ defmodule Demo.Accounts do
 
   """
   def change_user_password(user, attrs \\ %{}) do
-    User.password_changeset(user, attrs)
+    User.password_changeset(user, attrs, hash_password: false)
   end
 
   @doc """
